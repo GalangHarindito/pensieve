@@ -1,0 +1,1 @@
+export const baseApiUrl = "http://52.74.166.134:3000" 

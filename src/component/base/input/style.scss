@@ -1,0 +1,55 @@
+.input-password {
+  position: relative;
+  input:focus {
+    border: 1px solid #000;
+  }
+  .item-input-password {
+    padding: 8px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #e7e8f3;
+    font-size: 0.95rem;
+  }
+  .border-error{
+    border: 1px solid #FF2C2C;
+  }
+  .ic-password {
+    position: absolute;
+    right: 1rem;
+    top: 0.7rem;
+    img {
+      width: 1.2rem;
+    }
+  }
+}
+
+.input-text {
+  position: relative;
+  input:focus {
+    border: 1px solid #000;
+  }
+  .item-input {
+    padding: 8px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #e7e8f3;
+    font-size: 0.95rem;
+  }
+  .border-error{
+    border: 1px solid #FF2C2C;
+  }
+  .icon {
+    position: absolute;
+    right: 1rem;
+    top: 0.7rem;
+    img {
+      width: 1.2rem;
+    }
+  }
+}
+
+.error-input {
+    font-size: 0.8rem;
+    color: #FF2C2C;
+    margin-top: 5px;
+}

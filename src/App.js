@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { publicRoutes, privateRoutes } from "./config";
+import PageBase from "./component/layout/pageBase";
+import ToasterContainer from "./component/base/toaster";
+
+function App({ history, store }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={history}>
+      <ToasterContainer />
+      <Routes>
+        {publicRoutes.map(({ path, component: Component }) => (
+          <Route path={path} element={<Component />} key={path} />
+        ))}
+      </Routes>
+      <PageBase>
+        <Routes>
+          {privateRoutes.map(({ path, component: Component }) => (
+            <Route path={path} element={<Component />} key={path} />
+          ))}
+        </Routes>
+      </PageBase>
+    </Router>
   );
 }
 

@@ -1,0 +1,26 @@
+.button {
+  border-radius: 8px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.default {
+  background-color: #fcb240;
+  border-color: #fcb240;
+}
+
+.delete {
+  background-color: #ff2c2c;
+  border-color: #ff2c2c;
+  color: #fff;
+}
+
+.transparent {
+  background-color: transparent;
+  border-color: #fcb240;
+}
