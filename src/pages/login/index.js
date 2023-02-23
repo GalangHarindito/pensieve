@@ -13,11 +13,11 @@ export default function Login() {
     if (user_name && password) {
       await fetchLogin(value)
         .then((res) => {
-          const { data, status } = res;
+            const { data, status } = res
           if (status === 200) {
-            const { response } = data;
-            const { message } = response;
-            dispatch(setAccessToken(message.loginToken));
+            const {response} = data
+            const {message} = response
+            dispatch(setAccessToken(message))
             navigate("/dashboard");
           }
         })

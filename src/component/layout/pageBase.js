@@ -6,7 +6,7 @@ import "./style.css";
 export default function PageBase({ children }) {
   const accessToken = useSelector((s) => s.accessToken);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     const app = document.getElementById("root");
     app.className = "pagebase";
@@ -16,7 +16,7 @@ export default function PageBase({ children }) {
     if (!accessToken) {
       navigate("/");
     }
-  });
+  },[]);
 
   return (
     <>
