@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import './style.scss'
 
-const InputPassword = ({ type, placeholder, onChange, error }) => {
+const InputPassword = ({ placeholder, onChange, error }) => {
   const [typeInput, setType] = useState("");
   const hide = () => {
     setType("password");
@@ -10,13 +10,10 @@ const InputPassword = ({ type, placeholder, onChange, error }) => {
     setType("text");
   };
 
-  useEffect(() => {
-    setType(type);
-  }, []);
   return (
     <div className="input-password">
       <input
-        type={typeInput}
+        type="password"
         placeholder={placeholder}
         onChange={(e) => onChange(e)}
         className={`item-input-password ${error?'border-error' : ''}`}

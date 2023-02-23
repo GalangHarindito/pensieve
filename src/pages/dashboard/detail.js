@@ -24,7 +24,7 @@ export default function DetailDevice() {
         }
       })
       .catch((e) => console.error(e));
-  }, [idDevice]);
+  }, [idDevice, accessToken]);
 
   const chartData = (data) => {
     const list = data.map((item) => item.location);
@@ -76,7 +76,7 @@ export default function DetailDevice() {
         ],
       },
     ],
-    []
+    [idDevice]
   );
 
   return (

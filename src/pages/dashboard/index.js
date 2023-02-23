@@ -1,14 +1,18 @@
 import { useEffect, useState, useMemo } from "react";
 import { fetchDashboard } from "../../api/dashboard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Table from "../../component/base/table";
+import Button from "../../component/base/button";
 import "./styles.scss";
 import { formatDate } from "../../helpers/format";
 import { useNavigate } from "react-router-dom";
+import { setAccessToken } from "../../store/accessToken/actions";
 
 export default function Dashboard() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const accessToken = useSelector((s) => s.accessToken);
+
   const [response, setResponse] = useState([]);
   useEffect(() => {
     if (accessToken) {
@@ -32,6 +36,11 @@ export default function Dashboard() {
 
   const handleClick = (data) => {
     navigate(`detail?id=${data.device_id}`);
+  };
+
+  const handleExit = () => {
+    dispatch(setAccessToken(""));
+    navigate(`/`);
   };
 
   const columns = useMemo(
@@ -67,6 +76,9 @@ export default function Dashboard() {
 
   return (
     <div className="table-dashboard">
+      <div className="button-exit">
+        <Button label="exit" variant="delete" onClick={handleExit} />
+      </div>
       <Table
         columns={columns}
         data={response}
