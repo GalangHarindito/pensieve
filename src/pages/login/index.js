@@ -17,7 +17,7 @@ export default function Login() {
           if (status === 200) {
             const {response} = data
             const {message} = response
-            dispatch(setAccessToken(message))
+            dispatch(setAccessToken(message.loginToken))
             navigate("/dashboard");
           }
         })

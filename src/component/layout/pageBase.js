@@ -16,7 +16,7 @@ export default function PageBase({ children }) {
     if (!accessToken) {
       navigate("/");
     }
-  },[]);
+  },[accessToken, navigate]);
 
   return (
     <>
