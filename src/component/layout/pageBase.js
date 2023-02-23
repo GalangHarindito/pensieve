@@ -16,6 +16,7 @@ export default function PageBase({ children }) {
     if (!accessToken) {
       navigate("/");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[accessToken,]);
 
   return (
